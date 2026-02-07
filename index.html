@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Army | Service Before Self</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Rajdhani:wght@500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* =====================================================
+       PREMIUM TACTICAL STYLESHEET
+       ===================================================== */
+    
+    :root {
+      /* Light Mode Variables (Default) */
+      --primary: #0F3D2E;      /* Deep Jungle Green */
+      --secondary: #1B4D3E;    /* Darker Green */
+      --accent: #FF9933;       /* Saffron */
+      --text-main: #1a1a1a;
+      --text-muted: #555555;
+      --bg-body: #F0F2F5;
+      --bg-card: rgba(255, 255, 255, 0.85); /* Glass Effect */
+      --border-card: rgba(255, 255, 255, 0.6);
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      
+      /* Fonts */
+      --font-head: 'Playfair Display', serif;
+      --font-tech: 'Rajdhani', sans-serif; /* Tactical Font */
+      --font-body: 'Roboto', sans-serif;
+    }
+
+    /* DARK / TACTICAL MODE VARIABLES */
+    [data-theme="dark"] {
+      --primary: #051b14;
+      --secondary: #000000;
+      --text-main: #e0e0e0;
+      --text-muted: #a0a0a0;
+      --bg-body: #0a0f0d; /* Deep Camo Black */
+      --bg-card: rgba(20, 40, 30, 0.6);
+      --border-card: rgba(255, 153, 51, 0.2);
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      transition: background-color 0.4s ease, color 0.4s ease;
+      overflow-x: hidden;
+      background-image: radial-gradient(var(--text-muted) 1px, transparent 1px);
+      background-size: 40px 40px; /* Subtle texture */
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ========================================
+       NAVIGATION
+       ======================================== */
+    .header {
+      background: rgba(15, 61, 46, 0.95); /* Semi-transparent */
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid var(--accent);
+      transition: all 0.3s ease;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-icon { font-size: 2rem; }
+    
+    .logo-text {
+      font-family: var(--font-tech);
+      font-size: 28px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-family: var(--font-tech);
+      font-weight: 600;
+      font-size: 18px;
+      text-transform: uppercase;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--accent);
+      transition: width 0.3s;
+    }
+
+    .nav-link:hover { color: var(--accent); }
+    .nav-link:hover::after { width: 100%; }
+
+    /* TOGGLE SWITCH */
+    .theme-toggle {
+      background: none;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      padding: 5px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: var(--font-tech);
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .theme-toggle:hover { background: var(--accent); color: #000; }
+
+    /* Mobile Menu */
+    .hamburger { display: none; cursor: pointer; }
+    .bar { width: 25px; height: 3px; background-color: #fff; margin: 4px 0; transition: 0.4s; }
+
+    /* ========================================
+       HERO SECTION (Parallax & Glitch)
+       ======================================== */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      background: url('https://images.unsplash.com/photo-1595304192909-0d6039c33959?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+      background-attachment: fixed; /* Parallax Effect */
+      overflow: hidden;
+    }
+
+    /* Dark Overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(180deg, rgba(15,61,46,0.7) 0%, rgba(0,0,0,0.8) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 0 20px;
+    }
+
+    .hero-heading {
+      font-family: var(--font-head);
+      font-size: 5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+      letter-spacing: -1px;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-tech);
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .hero-description {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      opacity: 0.9;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 40px;
+      font-family: var(--font-tech);
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      letter-spacing: 1px;
+      margin: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #000;
+      border: 2px solid var(--accent);
+    }
+
+    .btn-primary:hover {
+      background-color: transparent;
+      color: var(--accent);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+    }
+
+    .btn-secondary:hover {
+      background-color: #fff;
+      color: #000;
+    }
+
+    /* ========================================
+       STATS SECTION (Floating)
+       ======================================== */
+    .quick-stats {
+      margin-top: -60px;
+      position: relative;
+      z-index: 10;
+      padding-bottom: 40px;
+    }
+
+    .stats-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid var(--border-card);
+      border-radius: 12px;
+      padding: 40px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      box-shadow: var(--shadow);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .stat-box { text-align: center; padding: 15px; min-width: 150px; }
+    
+    .stat-number {
+      font-family: var(--font-tech);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+      line-height: 1;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 5px;
+    }
+
+    /* ========================================
+       COMMON SECTION STYLES
+       ======================================== */
+    section { padding: 80px 0; }
+    
+    .section-header { text-align: center; margin-bottom: 60px; }
+    
+    .section-title {
+      font-family: var(--font-head);
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    
+    [data-theme="dark"] .section-title { color: var(--accent); }
+
+    .title-underline {
+      width: 80px;
+      height: 4px;
+      background: var(--accent);
+      margin: 0 auto 15px;
+    }
+
+    /* ========================================
+       ABOUT & CARDS (Glassmorphism)
+       ======================================== */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .glass-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-card);
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      border-color: var(--accent);
+    }
+
+    .card-icon { font-size: 2.5rem; margin-bottom: 10px; }
+    .glass-card h4 { font-family: var(--font-tech); font-size: 1.5rem; color: var(--primary); }
+    [data-theme="dark"] .glass-card h4 { color: #fff; }
+
+    /* ========================================
+       DIVISIONS (Grid)
+       ======================================== */
+    .divisions-grid, .missions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .division-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-top: 4px solid var(--accent);
+      padding: 30px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .division-card:hover { transform: translateY(-10px); }
+
+    .division-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+    .division-icon { font-size: 2.5rem; }
+    .division-header h3 { font-family: var(--font-tech); font-size: 1.8rem; margin: 0; color: var(--primary); }
+    [data-theme="dark"] .division-header h3 { color: #fff; }
+
+    .division-features li {
+      list-style: none;
+      margin-bottom: 5px;
+      padding-left: 20px;
+      position: relative;
+    }
+    .division-features li::before {
+      content: '>';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* ========================================
+       MASONRY GALLERY (Refactored)
+       ======================================== */
+    .gallery-grid {
+      column-count: 4;
+      column-gap: 20px;
+    }
+
+    .gallery-card {
+      break-inside: avoid;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow);
+      
+      /* Ensure images cover the whole card */
+      background-size: cover; 
+      background-position: center;
+    }
+
+    /* Assigning varied heights for Masonry feel */
+    .img-1 { height: 250px; }
+    .img-2 { height: 350px; }
+    .img-3 { height: 280px; }
+    .img-4 { height: 320px; }
+    .img-5 { height: 300px; }
+    .img-6 { height: 260px; }
+    .img-7 { height: 310px; }
+    .img-8 { height: 290px; }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 20px;
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    .gallery-card:hover .gallery-overlay { opacity: 1; }
+    .overlay-content { text-align: center; color: #fff; }
+    .overlay-content h4 { font-family: var(--font-tech); color: var(--accent); margin-bottom: 5px; }
+
+    /* ========================================
+       RECRUITMENT (3D Tilt Effect)
+       ======================================== */
+    .recruitment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .recruitment-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      padding: 40px 30px;
+      border-radius: 15px;
+      text-align: center;
+      position: relative;
+      transform-style: preserve-3d;
+      transform: perspective(1000px);
+      transition: transform 0.1s; /* Faster for JS tilt */
+    }
+
+    .recruitment-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--accent);
+      color: #000;
+      padding: 5px 12px;
+      font-weight: bold;
+      font-family: var(--font-tech);
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .recruitment-card h3 {
+      font-family: var(--font-tech);
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    [data-theme="dark"] .recruitment-card h3 { color: #fff; }
+
+    .recruitment-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 25px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      font-family: var(--font-tech);
+      text-transform: uppercase;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+    .recruitment-btn:hover { background: var(--accent); color: #000; }
+
+    /* ========================================
+       CONTACT & FOOTER
+       ======================================== */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 40px;
+      background: var(--bg-card);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    
+    .contact-info { background: var(--primary); color: #fff; padding: 40px; }
+    .contact-form-wrapper { padding: 40px; }
+    
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      background: rgba(255,255,255,0.5);
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: var(--font-body);
+    }
+
+    .footer {
+      background: #051b14;
+      color: #ccc;
+      padding: 60px 0 20px;
+      border-top: 4px solid var(--accent);
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+    
+    .footer-heading { color: #fff; margin-bottom: 20px; font-family: var(--font-tech); }
+    .footer-links a { color: #aaa; text-decoration: none; display: block; margin-bottom: 10px; transition: 0.3s; }
+    .footer-links a:hover { color: var(--accent); padding-left: 5px; }
+
+    /* ========================================
+       ANIMATION CLASSES (Scroll Reveal)
+       ======================================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .hero-heading { font-size: 3.5rem; }
+      .about-content, .contact-wrapper { grid-template-columns: 1fr; }
+      .gallery-grid { column-count: 2; }
+      .nav-menu { display: none; } /* Simplified for this code block */
+      .hamburger { display: block; }
+    }
+    @media (max-width: 600px) {
+      .gallery-grid { column-count: 1; }
+      .hero-heading { font-size: 2.5rem; }
+    }
+
+  </style>
+</head>
+<body data-theme="light">
+
+  <header class="header">
+    <div class="container navbar">
+      <a href="#" class="logo">
+        <span class="logo-icon">⚔️</span>
+        <h1 class="logo-text">Indian Army</h1>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#divisions" class="nav-link">Divisions</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#recruitment" class="nav-link">Join Us</a></li>
+        <li><button class="theme-toggle" id="themeToggle">NIGHT OPS</button></li>
+      </ul>
+
+      <div class="hamburger">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content reveal">
+      <h1 class="hero-heading">SERVICE BEFORE SELF</h1>
+      <h2 class="hero-subtitle">Bhartiya Sena</h2>
+      <p class="hero-description">
+        Defending the Nation with Courage, Discipline & Ultimate Sacrifice. 
+        The shield of India, the pride of the people.
+      </p>
+      <div class="hero-buttons">
+        <a href="#about" class="btn btn-primary">Mission Brief</a>
+        <a href="#recruitment" class="btn btn-secondary">Enlist Now</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="quick-stats">
+    <div class="container">
+      <div class="stats-container reveal">
+        <div class="stat-box">
+          <span class="stat-number">1.4M+</span>
+          <span class="stat-label">Soldiers</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">15k+</span>
+          <span class="stat-label">Border KM</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">21</span>
+          <span class="stat-label">Param Vir Chakras</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">40+</span>
+          <span class="stat-label">UN Missions</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Legacy of Valor</h2>
+        <div class="title-underline"></div>
+        <p>Guardians of Freedom | Pride of the Nation</p>
+      </div>
+
+      <div class="about-content">
+        <div class="about-text reveal">
+          <h3 style="font-family: var(--font-tech); font-size: 2rem; margin-bottom: 20px;">The Supreme Force</h3>
+          <p style="margin-bottom: 15px; color: var(--text-muted);">
+            The Indian Army is the land-based branch and the largest component of the Indian Armed Forces. 
+            From the frozen heights of Siachen to the scorching deserts of Rajasthan, we stand guard.
+          </p>
+          <ul style="list-style: none; margin-top: 20px;">
+            <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+              <span style="color: var(--accent); font-weight: bold;">✓</span> Founded on 1st April 1895
+            </li>
+            <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+              <span style="color: var(--accent); font-weight: bold;">✓</span> Motto: "Service Before Self"
+            </li>
+            <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+              <span style="color: var(--accent); font-weight: bold;">✓</span> 4th Largest Army in the World
+            </li>
+          </ul>
+        </div>
+
+        <div class="about-cards">
+          <div class="glass-card reveal">
+            <div class="card-icon">🎯</div>
+            <h4>Our Mission</h4>
+            <p>To ensure national security and national unity, defending the nation from external aggression.</p>
+          </div>
+          <div class="glass-card reveal">
+            <div class="card-icon">🛡️</div>
+            <h4>Core Values</h4>
+            <p>Duty, Honor, Country - Absolute integrity, loyalty, courage, and selfless sacrifice.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="divisions" style="background-color: rgba(0,0,0,0.02);">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Combat Divisions</h2>
+        <div class="title-underline"></div>
+        <p>Specialized Forces for Every Challenge</p>
+      </div>
+
+      <div class="divisions-grid">
+        <div class="division-card reveal">
+          <div class="division-header">
+            <span class="division-icon">🪖</span>
+            <h3>Infantry</h3>
+          </div>
+          <p>The backbone of the Indian Army, responsible for ground combat operations.</p>
+        </div>
+
+        <div class="division-card reveal">
+          <div class="division-header">
+            <span class="division-icon">🚁</span>
+            <h3>Aviation</h3>
+          </div>
+          <p>Provides aerial reconnaissance, transport, and close air support.</p>
+        </div>
+
+        <div class="division-card reveal">
+          <div class="division-header">
+            <span class="division-icon">🎯</span>
+            <h3>Artillery</h3>
+          </div>
+          <p>Delivers long-range firepower with advanced howitzers and rockets.</p>
+        </div>
+
+        <div class="division-card reveal">
+          <div class="division-header">
+            <span class="division-icon">⚡</span>
+            <h3>Para SF</h3>
+          </div>
+          <p>Elite commandos trained for covert operations and unconventional warfare.</p>
+        </div>
+
+        <div class="division-card reveal">
+          <div class="division-header">
+            <span class="division-icon">🛡️</span>
+            <h3>Armoured</h3>
+          </div>
+          <p>Operates main battle tanks and fighting vehicles for offensive ops.</p>
+        </div>
+
+        <div class="division-card reveal">
+          <div class="division-header">
+            <span class="division-icon">🔧</span>
+            <h3>Engineers</h3>
+          </div>
+          <p>Combat engineering support, bridge construction, and mine clearance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">War Room Gallery</h2>
+        <div class="title-underline"></div>
+      </div>
+
+      <div class="gallery-grid reveal">
+        <div class="gallery-card img-1" style="background: url('https://i.makeagif.com/media/2-26-2021/kWgGcw.gif') no-repeat center center/cover;">
+          <div class="gallery-overlay"><div class="overlay-content"><h4>Border Patrol</h4></div></div>
+        </div>
+
+        <div class="gallery-card img-2" style="background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQyNEVwOxqRN3v2IEsdOcEVoQIuVVUX0EGSw&s') no-repeat center center/cover;">
+          <div class="gallery-overlay"><div class="overlay-content"><h4>Tank Regiment</h4></div></div>
+        </div>
+
+        <div class="gallery-card img-3" style="background: url('https://www.hindustantimes.com/ht-img/img/2025/01/26/550x309/republic_day_parade_kartavya_path_1737873166505_1737873175026.gif') no-repeat center center/cover;">
+          <div class="gallery-overlay"><div class="overlay-content"><h4>Republic Day</h4></div></div>
+        </div>
+
+        <div class="gallery-card img-4" style="background: url('https://defencedirecteducation.com/wp-content/uploads/2022/07/DziYHGaWsAAunte.jpeg') no-repeat center center/cover;">
+          <div class="gallery-overlay"><div class="overlay-content"><h4>Siachen Glacier</h4></div></div>
+        </div>
+
+        <div class="gallery-card img-5" style="background: url('https://images.bhaskarassets.com/web2images/1884/2025/02/06/apache-new_1738850880.gif') no-repeat center center/cover;">
+          <div class="gallery-overlay"><div class="overlay-content"><h4>Helicopter Unit</h4></div></div>
+        </div>
+
+        <div class="gallery-card img-6" style="background: url('https://i.makeagif.com/media/5-14-2017/VNOn4P.gif') no-repeat center center/cover;">
+          <div class="gallery-overlay"><div class="overlay-content"><h4>Artillery Fire</h4></div></div>
+        </div>
+
+        <div class="gallery-card img-7" style="background: url('https://i.pinimg.com/originals/f8/fa/9a/f8fa9a82f3fc23cdb8674cccc01e65d0.gif') no-repeat center center/cover;">
+          <div class="gallery-overlay"><div class="overlay-content"><h4>Victory</h4></div></div>
+        </div>
+
+        <div class="gallery-card img-8" style="background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfLewWutuWItBUXAoKtIOROFU4tQMYLWs4OA&s') no-repeat center center/cover;">
+          <div class="gallery-overlay"><div class="overlay-content"><h4>Combat Ready</h4></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="recruitment">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Enlist Now</h2>
+        <div class="title-underline"></div>
+        <p>Choose your path of Honor</p>
+      </div>
+
+      <div class="recruitment-grid">
+        <div class="recruitment-card tilt-card reveal">
+          <span class="recruitment-badge">Officer</span>
+          <h3>NDA Entry</h3>
+          <p>Join after 12th standard via UPSC exam. 3 Years training at National Defence Academy.</p>
+          <a href="#" class="recruitment-btn">Apply</a>
+        </div>
+
+        <div class="recruitment-card tilt-card reveal">
+          <span class="recruitment-badge">Officer</span>
+          <h3>CDS Entry</h3>
+          <p>For graduates seeking permanent commission. Training at Indian Military Academy.</p>
+          <a href="#" class="recruitment-btn">Apply</a>
+        </div>
+
+        <div class="recruitment-card tilt-card reveal">
+          <span class="recruitment-badge">Tech</span>
+          <h3>TGC Entry</h3>
+          <p>Technical Graduate Course for Engineers. Direct SSB Interview call.</p>
+          <a href="#" class="recruitment-btn">Apply</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Secure Comms</h2>
+        <div class="title-underline"></div>
+      </div>
+
+      <div class="contact-wrapper reveal">
+        <div class="contact-info">
+          <h3 style="margin-bottom: 20px; font-family: var(--font-tech);">HQ Contact</h3>
+          <p style="margin-bottom: 30px;">For queries related to recruitment or general info.</p>
+          
+          <div style="margin-bottom: 20px;">
+            <h4>📍 Address</h4>
+            <p>Integrated HQ, Ministry of Defence, New Delhi</p>
+          </div>
+          <div style="margin-bottom: 20px;">
+            <h4>📞 Phone</h4>
+            <p>+91-11-2301-XXXX</p>
+          </div>
+          <div>
+            <h4>✉️ Email</h4>
+            <p>rexxxxxnt@indxxxxxmy.nic.in</p>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <form>
+            <div class="form-group">
+              <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+              <select>
+                <option>Recruitment Query</option>
+                <option>General Info</option>
+                <option>Feedback</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea rows="4" placeholder="Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-heading">Indian Army</h3>
+          <p style="font-size: 14px; line-height: 1.6;">Defending the nation with honor, courage, and commitment since 1895.</p>
+          <p style="margin-top: 15px; color: var(--accent); font-weight: bold;">"Service Before Self"</p>
+        </div>
+        <div>
+          <h3 class="footer-heading">Quick Links</h3>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#divisions">Divisions</a>
+            <a href="#gallery">Gallery</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer-heading">Join Us</h3>
+          <div class="footer-links">
+            <a href="#">Recruitment</a>
+            <a href="#">Officer Entry</a>
+            <a href="#">Soldier Entry</a>
+            <a href="#">Women in Army</a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px; font-size: 14px; opacity: 0.7; border-top: 1px solid #333; padding-top: 20px;">
+        &copy; 2026 Indian Army Official Website. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 1. SCROLL REVEAL ANIMATION
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // 2. TACTICAL / DARK MODE TOGGLE
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+
+    toggleBtn.addEventListener('click', () => {
+      const isDark = body.getAttribute('data-theme') === 'dark';
+      body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      toggleBtn.textContent = isDark ? 'NIGHT OPS' : 'DAY OPS';
+    });
+
+    // 3. 3D TILT EFFECT FOR CARDS
+    document.querySelectorAll('.tilt-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateX = ((y - rect.height/2) / rect.height) * -10;
+        const rotateY = ((x - rect.width/2) / rect.width) * 10;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+      });
+    });
+  </script>
+
+</body>
+</html>
